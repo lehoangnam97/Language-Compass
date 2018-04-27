@@ -1,0 +1,806 @@
+﻿<Window x:Class="UserInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow"  Height="640" Width="800"
+        WindowStartupLocation="CenterScreen"
+        
+        AllowsTransparency="True"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+            Background="#EBDFCF"
+   Icon=".\Resources\icono.ico"
+       
+        >
+    <Window.Resources>
+        <ControlTemplate x:Key="Button Template Game" TargetType="ContentControl">
+            <Grid>
+                <Border x:Name="gold" CornerRadius="30,30,30,30" BorderThickness="2" Background="#e67e22" ></Border>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                </ContentPresenter>
+            </Grid>
+
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="gold" Property="Background" Value="#d35400"></Setter>
+
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="Button Template2" TargetType="ContentControl">
+            <Grid>
+                <Border x:Name="gold" CornerRadius="0,0,0,0" BorderThickness="2" Background="#f1c40f" ></Border>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                </ContentPresenter>
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="gold" Property="Background" Value="#e67e22"></Setter>
+
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
+
+    <i:Interaction.Behaviors>
+        <Behaviours:BorderlessWindowBehavior/>
+    </i:Interaction.Behaviors>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Source=".\Resources\icono.png"></Image>
+            <Label FontSize="15" Foreground="Black" Content="Compass Language"></Label>
+        </StackPanel>
+        <StackPanel Panel.ZIndex="10" Orientation="Horizontal" HorizontalAlignment="Right">
+
+
+            <Controls:Badged  Margin="10,0,0,0" Panel.ZIndex="10" x:Name="badge_noti" BadgePlacementMode="Bottom"      Width="40" Height="40" Badge="{Binding Path=BadgeValue}">
+
+
+                <Button  Click="ButtonUpdate_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border CornerRadius="20" Background="#ffcc00">
+                                <Image Margin="10" Source=".\Resources\beru.png"></Image>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Controls:Badged>
+
+            <Button  Margin="10,0,0,0" Click="Button_Click_1">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="20" Background="Gray">
+                            <Image Source=".\Resources\mainasu.png" >
+
+                            </Image>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button   Margin="10,0,0,0" Click="Button_Click_2">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="20" Background="Gray">
+                            <Image Margin="-10" Source=".\Resources\max.png" >
+
+                            </Image>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+
+            </Button>
+            <Button  Margin="10,0,0,0" Click="Button_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="20" Background="Red">
+                            <Image Margin="-10" Source=".\Resources\owari.png" >
+
+                            </Image>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </StackPanel>
+        <Controls:MetroAnimatedSingleRowTabControl x:Name="TabAll" Grid.Row="1">
+            <Controls:MetroAnimatedSingleRowTabControl.Resources>
+                <SolidColorBrush x:Key="AccentColorBrush" Color="#EBDFCF"/>
+                <SolidColorBrush x:Key="HighlightBrush" Color="Orange"/>
+
+            </Controls:MetroAnimatedSingleRowTabControl.Resources>
+            <Controls:MetroTabItem x:Name="head_main" Header="Main" Background="#2C6049">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="2*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="#2C6049">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="1" x:Name="gridflyout">
+                            <Controls:Flyout x:Name="flyoutOption" BorderThickness="0" HorizontalAlignment="Left" Background="#2C6049" Width="255" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="275"/>
+                                    </Grid.RowDefinitions>
+                                    <Menu Background="Transparent" >
+                                        <MenuItem x:Name="menuitem_fav" MouseLeave="menuitem_fav_MouseLeave" MouseEnter="menuitem_fav_MouseEnter" Click="menuitem_fav_Click" Background="Transparent">
+                                            <MenuItem.Template>
+                                                <ControlTemplate>
+
+                                                    <Grid Background="Transparent">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="80"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image x:Name="img_iconfav" Margin="15">
+                                                            <Image.Style>
+                                                                <Style TargetType="{x:Type Image}">
+                                                                    <Setter Property="Source" Value=".\Resources\essentials-10fade.png"/>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                        <Label x:Name="main_asfav" Grid.Column="1" FontFamily="Calibri" Foreground="#EBDFCF" VerticalAlignment="Center"  FontSize="20" Content="Mark as favorite"></Label>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Margin" Value="-3"></Setter>
+
+                                                        </Trigger>
+
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </MenuItem.Template>
+                                        </MenuItem>
+                                        <MenuItem x:Name="menuitem_tag" Click="menuitem_tag_Click" Background="Transparent">
+
+
+                                            <MenuItem.Template>
+                                                <ControlTemplate>
+
+                                                    <Grid Background="Transparent">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="80"/>
+                                                            <ColumnDefinition/>
+
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image x:Name="img_icontag" Margin="15">
+                                                            <Image.Style>
+                                                                <Style TargetType="{x:Type Image}">
+                                                                    <Setter Property="Source" Value=".\Resources\summer-15fade.png"/>
+
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+
+                                                        <Label x:Name="main_adtag" Grid.Column="1" FontFamily="Calibri" Foreground="#EBDFCF" VerticalAlignment="Center"  FontSize="20" Content="Add tag"></Label>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Margin" Value="-3"></Setter>
+                                                            <Setter TargetName="img_icontag" Property="Source" Value=".\Resources\summer-15.png"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </MenuItem.Template>
+                                        </MenuItem>
+
+                                    </Menu>
+                                    <ListView x:Name="listTag" BorderThickness="0" VerticalAlignment="Top"  Grid.Row="1" Background="Transparent" Margin="60,0">
+                                        <ListView.ItemContainerStyle>
+                                            <Style TargetType="ListViewItem">
+                                                <Setter Property="FontSize" Value="13" />
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="#EBDFCF" />
+
+                                                <Setter Property="FontStyle" Value="Italic" />
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="BorderBrush" Value="#EBDFCF"></Setter>
+                                                        <Setter Property="BorderThickness" Value="0"/>
+                                                        <Setter Property="FontWeight" Value="Bold"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ListView.ItemContainerStyle>
+                                    </ListView>
+
+
+
+                                </Grid>
+                            </Controls:Flyout>
+                        </Grid>
+                        <Border BorderThickness="0" Margin="5,5,5,5" Background="#EBDFCF" CornerRadius="30">
+                        </Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="80"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btn_search" Margin="5,8,5,8" Grid.Column="1" Click="btn_search_Click" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Border>
+                                            <Image x:Name="img_search">
+                                                <Image.Style>
+                                                    <Style TargetType="{x:Type Image}">
+                                                        <Setter Property="Source" Value=".\Resources\summer-02fade.png"/>
+                                                        <Style.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Margin" Value="-3"></Setter>
+                                                                <Setter Property="Source" Value=".\Resources\summer-02.png"/>
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Image.Style>
+
+                                            </Image>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <toolkit:AutoCompleteBox  x:Name="txtbx_input" Background="Transparent" PreviewKeyDown="autotxtInput_EnterKey" FontFamily="Calibri" Foreground="#2C6049" Margin="35, 2,2,2" VerticalAlignment="Center" FontSize="30" BorderThickness="0">
+
+                            </toolkit:AutoCompleteBox>
+
+                        </Grid>
+
+                        <Grid Margin="15" Grid.Row="1" Panel.ZIndex="-10" Background="#2C6049">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Image Source=".\Resources\feather.png" VerticalAlignment="Top" DockPanel.Dock="Top" Width="50" Height="50"></Image>
+                            <Label x:Name="main_history" Grid.Column="1" Content="History:" FontFamily="Calibri" Foreground="#EBDFCF" FontSize="30" />
+                            <ListView x:Name="list_history" SelectionChanged="list_history_SelectionChanged" BorderThickness="0" Grid.Row="1" FontSize="25" Background="Transparent" Grid.ColumnSpan="2" >
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="FontSize" Value="14" />
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Foreground" Value="#EBDFCF" />
+
+                                        <Setter Property="FontStyle" Value="Italic" />
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="BorderBrush" Value="#EBDFCF"></Setter>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                            </ListView>
+
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1" Background="#EBDFCF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="0.3*"/>
+                        </Grid.RowDefinitions>
+
+                        <Image x:Name="image_Word" Panel.ZIndex="10"
+                        Grid.Row="0" Grid.Column="1"  
+                                Loaded="Image_Loaded"/>
+                        <Border Grid.Row="1" Grid.ColumnSpan="2" >
+                            <Rectangle Stroke="#2C6049" Height="3" StrokeThickness="3" VerticalAlignment="Top" StrokeDashArray="4 4"
+                                                       ></Rectangle>
+                        </Border>
+                        <StackPanel  x:Name="stackRelated"  VerticalAlignment="Stretch" Margin="20" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="{x:Type StackPanel}">
+                                    <Setter Property="Margin" Value="10,0,0,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                        </StackPanel>
+
+                        <RichTextBox x:Name="Content" BorderThickness="0" Background="Transparent" FontFamily="Calibri" Margin="20" IsReadOnly="True"></RichTextBox>
+                    </Grid>
+                </Grid>
+
+
+
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Advanced" x:Name="head_advance" Background="#098A74">
+                <Grid Background="#098A74"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label x:Name="advance_from" Content="    From: " FontFamily="Calibri" Foreground="#EBDFCF" FontSize="30" VerticalAlignment="Center"></Label>
+                        <ComboBox  SelectedIndex="0" x:Name="cmbx_from" Width="180" BorderThickness="0" Foreground="#EBDFCF" FontWeight="Medium" Background="Transparent" FontSize="30" VerticalAlignment="Center">
+
+                        </ComboBox>
+                    </StackPanel>
+                    <Grid  Grid.Column="1" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="advance_to" Content="To: " FontFamily="Calibri" Foreground="#EBDFCF" FontSize="30" VerticalAlignment="Center"></Label>
+                            <ComboBox SelectedIndex="1"  x:Name="cmbx_to" Width="180" BorderThickness="0" Foreground="#EBDFCF" FontWeight="Medium" Background="Transparent" FontSize="30" VerticalAlignment="Center">
+
+                            </ComboBox>
+                            <Label Content="                    "></Label>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="#EBDFCF" Margin="15" CornerRadius="30">
+
+                        </Border>
+                        <Button x:Name="btn_voiceregco" Click="BtnSpeech_Click" Panel.ZIndex="10" Margin="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border>
+
+                                        <Image x:Name="iconmic" Source=".\Resources\21fade.png">
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Setter Property="Height" Value="40"/>
+                                                    <Setter Property="Width" Value="40"/>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <RichTextBox   x:Name="rchtxtbx_input" TextChanged="rchtxtbx_input_KeyDown" BorderThickness="0" FontSize="20" Foreground="#098A74" FontFamily="Calibri" Margin="40,40,74.8,39.8" Background="Transparent">
+
+                        </RichTextBox>
+
+                        <Border Background="Transparent" BorderBrush="#EBDFCF" BorderThickness="5" Grid.Column="1" Margin="15" CornerRadius="30">
+
+                        </Border>
+                        <Button x:Name="btn_read" Click="BtnRead_Click" Grid.Column="1" Panel.ZIndex="10" Margin="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border>
+
+                                        <Image x:Name="iconmic" >
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Setter Property="Height" Value="40"/>
+                                                    <Setter Property="Width" Value="40"/>
+                                                    <Setter Property="Source" Value=".\Resources\readoutloufade.png"/>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Source" Value=".\Resources\readoutlouadacti.png"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <RichTextBox   x:Name="rchtxtbx_output" Grid.Column="1" IsReadOnly="True" BorderThickness="0"  FontSize="20" Foreground="#EBDFCF" FontFamily="Calibri" Margin="40" Background="Transparent"></RichTextBox>
+                    </Grid>
+
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem x:Name="head_mini" Header="Mini" MouseDoubleClick="MetroTabItem_MouseDoubleClick" Background="#009933" >
+                <Grid Background="#009933">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="364*"/>
+                        <ColumnDefinition Width="282*"/>
+                        <ColumnDefinition Width="147*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="3">
+                        <Image Source=".\Resources\Nezumi.png" Margin="5"></Image>
+                        <Label x:Name="mini_inro" VerticalAlignment="Center" FontFamily="Calibri" Foreground="#EBDFCF" FontStyle="Italic" Content="Double Click on the tab to open Mini mode, experience fast lookup on every other program's text and image"/>
+                        
+                        
+                    </StackPanel>
+                    <Label VerticalAlignment="Top" Margin="10" Grid.Row="1" x:Name="mini_inro2" FontFamily="Calibri" Foreground="#EBDFCF" FontStyle="Italic" >
+                        <TextBlock> Press Alt + Q to translate from extracted image
+                            <LineBreak/> Press Alt + C t translate text copied to clipboard
+                        </TextBlock>
+                    </Label>
+
+                </Grid>
+
+
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem x:Name="head_game" Header="Game" Background="#3498DB">
+                <Grid Background="#263238">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel  x:Name="stackbtnTopicGame" Grid.Column="0" >
+
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic0"  Height="50" Background="#2c3e50" Foreground="White"  Content="Body and Appearance"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic1"  Height="50" Background="#2c3e50" Foreground="White" Content="Business and Works"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic2"  Height="50" Background="#2c3e50" Foreground="White" Content="Culture and Society"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic3"  Height="50" Background="#2c3e50" Foreground="White" Content="Education"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic4"  Height="50" Background="#2c3e50" Foreground="White" Content="Entertainment"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic5"  Height="50" Background="#2c3e50" Foreground="White" Content="Food and Drink"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic6"  Height="50" Background="#2c3e50" Foreground="White" Content="Relationships"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic7"  Height="50" Background="#2c3e50" Foreground="White" Content="Science And Technology"></Button>
+                        <Button Click="btnGameTopic_Click" x:Name="btnGameTopic8"  Height="50" Background="#2c3e50" Foreground="White" Content="Sports"></Button>
+
+                    </StackPanel>
+
+
+
+
+
+                    <Grid Grid.Column="1">
+
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+
+
+                        <Grid x:Name="gridHeader" Grid.Row="0" Background="#ecf0f1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label  Content="Time : "   Foreground="Red"   FontWeight="ExtraBold" Grid.Column="0" Grid.Row="0"></Label>
+                            <Label  Content="Point"    Foreground="Green" FontWeight="ExtraBold" Grid.Column="2" Grid.Row="0"></Label>
+                            <Label  Content="HighScore"    Foreground="Blue"  FontWeight="ExtraBold" Grid.Column="4" Grid.Row="0"></Label>
+
+                            <Label x:Name="lbTimer"     Content="15"   Foreground="Red"   FontWeight="ExtraBold" Grid.Column="0" Grid.Row="1"></Label>
+                            <Label x:Name="lbScore"     Content="0"    Foreground="Green" FontWeight="ExtraBold" Grid.Column="2" Grid.Row="1"></Label>
+                            <Label x:Name="lbHighScore" Content="0"    Foreground="Blue"  FontWeight="ExtraBold" Grid.Column="4" Grid.Row="1"></Label>
+
+
+                        </Grid>
+
+
+
+                        <Grid x:Name="gridQuestions"  Grid.Row="1" Background="#ecf0f1"  >
+
+                            <TextBox x:Name="txtQuestion" FontSize="24" Foreground="Yellow" Background="#34495e" FontWeight="ExtraBold" ScrollViewer.CanContentScroll="True" TextWrapping="Wrap" IsReadOnly="True" Grid.Column="0"></TextBox>
+
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <StackPanel x:Name="stackAnswer" Grid.Row="0"  Orientation="Horizontal"  Background="#ecf0f1" ></StackPanel>
+
+                            <StackPanel  x:Name="stackMix" Grid.Row="1"   Background="#ecf0f1" Orientation="Horizontal" ></StackPanel>
+
+
+
+                        </Grid>
+
+
+                        <Grid x:Name="gridbtnGameRound" Grid.Row="3">
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="btnRefresh" Content="Refresh" Grid.Column="0" Height="50"  Foreground="White" FontWeight="ExtraBold"   Click="btnRefresh_Click"  Template="{StaticResource Button Template Game}" ></Button>
+                            <Button x:Name="btnNext"    Content="Next"    Grid.Column="1" Height="50"  Foreground="White" FontWeight="ExtraBold"    Click="btnNext_Click" Template="{StaticResource Button Template Game}" ></Button>
+                            <Button x:Name="btnEndGame" Content="EndGame" Grid.Column="3" Height="50"  Foreground="White" FontWeight="ExtraBold"    Click="btnEndGame_Click" Template="{StaticResource Button Template Game}" ></Button>
+
+                        </Grid>
+
+                    </Grid>
+
+
+
+                    <Grid x:Name="gridGameMain"  Grid.Column="3" Background="#3498db">
+                        <StackPanel VerticalAlignment="Center" >
+                            <Button x:Name="btnGameStart" Click="btnGameStart_Click" 
+                                FontWeight="ExtraBold"  Content="Game Play" 
+                                Background="Red" Foreground="White"
+                                Width="200" Height="60" 
+                                Template="{StaticResource Button Template Game}"  Margin="10,10,10,10"></Button>
+
+
+                            <Button x:Name="btnHighScore" Click="btnHighScore_Click"
+                                FontWeight="ExtraBold"  Content="View HighScore" 
+                                Background="Red" Foreground="White"
+                                Width="200" Height="60" 
+                                Template="{StaticResource Button Template Game}"  Margin="10,10,10,10">
+
+                            </Button>
+
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid x:Name="gridGameOver" Grid.Column="0" Background="#2ecc71" Grid.ColumnSpan="2" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+                        <TextBox x:Name="game_over" Text="GAME OVER"         IsReadOnly="True" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  FontSize="50"       VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#c0392b" Background="Transparent" FontWeight="ExtraBold"></TextBox>
+                        <TextBox x:Name="txtGameOverInfo" BorderThickness="0"  IsReadOnly="True" Grid.Column="0" Grid.Row="2"  FontSize="40" Foreground="#d35400" Background="Transparent"    FontWeight="ExtraBold" ></TextBox>
+                        <Button x:Name="btnBackGame" Click="btnBackGame_Click" Margin="20,20,20,20" Content="Back to Game" Template="{StaticResource Button Template Game}" Grid.Column="0" Grid.Row="3" Height="60"></Button>
+
+                        <TextBox x:Name="tb_forgottenword" Grid.Column="1" Background="Transparent" IsReadOnly="True" Text="Forgotten Words" FontWeight="ExtraBold" FontSize="20"></TextBox>
+
+                        <ListBox x:Name="lboxForgottenWords" BorderThickness="0"  Grid.Column="1" Grid.Row="1" MouseDoubleClick="lboxForgottenWords_MouseDoubleClick" Grid.RowSpan="3" Background="Transparent" FontSize="18" >
+                            <ListBox.Resources>
+                                <Style TargetType="{x:Type ListBoxItem}">
+                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                </Style>
+                            </ListBox.Resources>
+
+                        </ListBox>
+
+                    </Grid>
+                </Grid>
+            </Controls:MetroTabItem>
+
+            <Controls:MetroTabItem x:Name="head_setting" Header="Setting" Background="#4288A1">
+
+                <Grid Background="#4288A1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="264*"/>
+                        <ColumnDefinition Width="29*"/>
+                        <ColumnDefinition Width="499*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox x:Name="cbbx_ChooseDictionary" BorderThickness="0" Margin="10,22,0,22" FontSize="40" FontWeight="Bold" Foreground="#EBDFCF" SelectionChanged="cbbx_ChooseDictionary_SelectionChanged" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" SelectedIndex="0" Grid.ColumnSpan="2" >
+                        <ComboBox.Resources>
+                            <Style TargetType="{x:Type ComboBoxItem}">
+                                <Setter Property="Background" Value="#EBDFCF"></Setter>
+                                <Setter Property="Foreground" Value="#4288A1"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#EBDFCF"></Setter>
+                                        <Setter Property="Foreground" Value="#4288A1"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ComboBox.Resources>
+                        <ComboBoxItem Content="English - Vietnamese">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="English - English">
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="Tiếng Việt - Tiếng Anh">
+
+                        </ComboBoxItem>
+
+                    </ComboBox>
+                    <Label x:Name="setting_disp" Grid.Row="1" Content="Display Language:" FontSize="30" Foreground="#EBDFCF" FontFamily="Calibri" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,27"></Label>
+                    <Label x:Name="setting_navigate" Content="Dictionary:" FontSize="50" Foreground="#EBDFCF" FontFamily="Calibri" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,15"></Label>
+                    <ComboBox x:Name="cbbx_langdisp" BorderThickness="0" Margin="10,20,0,20" FontSize="40" FontWeight="Bold" Foreground="#EBDFCF" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" Grid.ColumnSpan="2">
+                        <ComboBox.Resources>
+                            <Style TargetType="{x:Type ComboBoxItem}">
+                                <Setter Property="Background" Value="#EBDFCF"></Setter>
+                                <Setter Property="Foreground" Value="#4288A1"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#EBDFCF"></Setter>
+                                        <Setter Property="Foreground" Value="#4288A1"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ComboBox.Resources>
+
+                        <ComboBoxItem x:Name="cbbi_DispEng" Selected="cbbi_DispEng_Selected" Content="English">
+                        </ComboBoxItem>
+
+                        <ComboBoxItem x:Name="cbbi_DispVie" Selected="cbbi_DispVie_Selected" Content="Tiếng Việt">
+
+                        </ComboBoxItem>
+
+                    </ComboBox>
+                    <CheckBox x:Name="setting_startup" Grid.Row="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" FontSize="50" Foreground="#EBDFCF" Content="Start with Window" HorizontalAlignment="Center" Grid.ColumnSpan="3" Margin="182,0"></CheckBox>
+                    <Button  Grid.Row="3" BorderThickness="0" Click="btn_resethighscore_Click" FontSize="25"  Background="Transparent" Foreground="#EBDFCF" Grid.ColumnSpan="3" x:Name="btn_resethighscore" Content="Reset Highscore"></Button>
+                </Grid>
+
+
+
+
+            </Controls:MetroTabItem>
+
+
+            <Controls:MetroTabItem x:Name="head_grammar" Header="Grammar" Background="#1E4564" Foreground="Black">
+                <Grid Background="#1E4564">
+
+                    <Controls:MetroAnimatedSingleRowTabControl Foreground="Black" FontFamily="Calibri" FontSize="15" TabStripPlacement="Left" BorderThickness="0">
+                        <Controls:MetroAnimatedSingleRowTabControl.Resources>
+                            <SolidColorBrush x:Key="AccentColorBrush" Color="#f1c40f"/>
+                            <SolidColorBrush x:Key="HighlightBrush" Color="Orange"/>
+
+                            <Style TargetType="{x:Type Controls:MetroTabItem}">
+
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                                <Setter Property="Foreground" Value="Black"></Setter>
+                            </Style>
+                        </Controls:MetroAnimatedSingleRowTabControl.Resources>
+
+                        <Controls:MetroTabItem x:Name="gra_tense" Foreground="Black" Header="Tenses" >
+                            <DocumentViewer x:Name="docTense">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+
+                        <Controls:MetroTabItem x:Name="gra_word" Header="Words">
+                            <DocumentViewer x:Name="docWords">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_phrase" Header="Phrases">
+                            <DocumentViewer x:Name="docPhrases">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_clause" Header="Clauses">
+                            <DocumentViewer x:Name="docClauses">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_sentence" Header="Sentences">
+                            <DocumentViewer x:Name="docSentences">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_irr" Header="IrregularVerbs">
+                            <DocumentViewer x:Name="docIrregularVerbs">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_topic" Header="Topics">
+                            <DocumentViewer x:Name="docTopics">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_popular" Header="Popular">
+                            <DocumentViewer x:Name="docPopular">
+
+                            </DocumentViewer>
+                        </Controls:MetroTabItem>
+
+                        <Controls:MetroTabItem x:Name="gra_idiom" Header="Idioms">
+                            <ListBox x:Name="lboxIdioms" SelectionChanged="lboxIdioms_SelectionChanged">
+
+                            </ListBox>
+                        </Controls:MetroTabItem>
+
+                    </Controls:MetroAnimatedSingleRowTabControl>
+                </Grid>
+            </Controls:MetroTabItem>
+
+
+            <Controls:MetroTabItem x:Name="head_fav" Header="Favorites" Background="#D23428">
+                <Grid Background="#D23428">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                        <Image Source=".\Resources\hato.png" Margin="10"></Image>
+                        <Label x:Name="fav_intro" VerticalAlignment="Center" FontFamily="Calibri" Foreground="#EBDFCF" FontStyle="Italic">
+                            <TextBlock>Mark out for interesting vocabulary yourself to improve your active English.
+                        <LineBreak/> They may come in handy for you when you need to write essay, introduction letter or even greeting card!"
+                            </TextBlock>
+                        </Label>
+                    </StackPanel>
+                    <TextBox x:Name="tb_fav" BorderThickness="0" IsReadOnly="True" Foreground="#EBDFCF" Grid.Row="1" Background="Transparent" FontSize="18" FontFamily="Calibri" FontStyle="Italic">
+
+
+
+                    </TextBox>
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="About" Background="#4D4D4D">
+                <Grid Background="White">
+                    <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source=".\Resources\Compass-PNG.png"></Image>
+                    <StackPanel Margin="30" VerticalAlignment="Top" >
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Margin" Value="0,10,0,0"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock x:Name="about_pro" Text="Programmer:" FontFamily="Calibri" FontWeight="Bold" FontSize="30" Foreground="#2C6049"></TextBlock>
+                        <TextBlock x:Name="lehoangnam" Text="   Lê Hoàng Nam" FontStyle="Italic" FontFamily="Calibri" FontSize="20"/>
+                        <TextBlock x:Name="about_des" Text="Desinger:" FontFamily="Calibri" FontWeight="Bold" FontSize="30" Foreground="#2C6049"></TextBlock>
+                        <TextBlock x:Name="phamhuyphat" Text="   Phạm Huy Phát" FontStyle="Italic" FontFamily="Calibri" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="30">
+                        <Image Width="100" Height="100" Source=".\Resources\xaml.png"></Image>
+                        <Image Width="100" Height="100" Source=".\Resources\2p4i.png"></Image>
+                    </StackPanel>
+                </Grid>
+
+            </Controls:MetroTabItem>
+
+
+        </Controls:MetroAnimatedSingleRowTabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+      <TabItem Header="Grammar" Background="#1abc9c" >
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="Tenses">
+                        <DocumentViewer x:Name="docTense">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="Words">
+                        <DocumentViewer x:Name="docWords">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="Phrases">
+                        <DocumentViewer x:Name="docPhrases">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="Clauses">
+                        <DocumentViewer x:Name="docClauses">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="Sentences">
+                        <DocumentViewer x:Name="docSentences">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="IrregularVerbs">
+                        <DocumentViewer x:Name="docIrregularVerbs">
+
+                        </DocumentViewer>
+                    </TabItem>
+
+                    <TabItem Header="Popular">
+                        <DocumentViewer x:Name="docPopular">
+
+                        </DocumentViewer>
+                    </TabItem>
+                    
+                    <TabItem Header="Idioms">
+                        <ListBox x:Name="lboxIdioms" SelectionChanged="lboxIdioms_SelectionChanged">
+
+                        </ListBox>
+                    </TabItem>
+
+
+
+                </TabControl>
+            </TabItem>

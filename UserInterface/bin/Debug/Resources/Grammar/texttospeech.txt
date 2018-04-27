@@ -1,0 +1,12 @@
+﻿   using (System.Speech.Synthesis.SpeechSynthesizer synthesizer = new System.Speech.Synthesis.SpeechSynthesizer())
+            {
+                synthesizer.SelectVoiceByHints(System.Speech.Synthesis.VoiceGender.Female, System.Speech.Synthesis.VoiceAge.Senior);
+
+                // select audio device
+                synthesizer.SetOutputToDefaultAudioDevice();
+
+                // build and speak a prompt
+                System.Speech.Synthesis.PromptBuilder builder = new System.Speech.Synthesis.PromptBuilder();
+                builder.AppendText(txtInput.Text);
+                synthesizer.Speak(builder);
+            }

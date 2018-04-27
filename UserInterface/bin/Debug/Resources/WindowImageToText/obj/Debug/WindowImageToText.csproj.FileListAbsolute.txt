@@ -1,0 +1,42 @@
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\WindowImageToText.exe
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\WindowImageToText.pdb
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.csprojResolveAssemblyReference.cache
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\MainWindow.g.cs
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\App.g.cs
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_Content.g.cs
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_MarkupCompile.cache
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_MarkupCompile.lref
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\MainWindow.baml
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.g.resources
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.Properties.Resources.resources
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.csproj.GenerateResource.Cache
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.exe
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.pdb
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\x64\liblept172.dll
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\x64\libtesseract304.dll
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\x86\liblept172.dll
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\x86\libtesseract304.dll
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\Tesseract.dll
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\Tesseract.xml
+C:\Users\NAM\Documents\Visual Studio 2017\Projects\NewDictionary\WindowImageToText\bin\Debug\tessnet2_64.pdb
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\x64\liblept172.dll
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\x64\libtesseract304.dll
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\x86\liblept172.dll
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\x86\libtesseract304.dll
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\WindowImageToText.exe
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\WindowImageToText.pdb
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\Tesseract.dll
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\Tesseract.xml
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\bin\Debug\tessnet2_64.pdb
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.csprojResolveAssemblyReference.cache
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\MainWindow.g.cs
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\App.g.cs
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_Content.g.cs
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_MarkupCompile.cache
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText_MarkupCompile.lref
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\MainWindow.baml
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.g.resources
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.Properties.Resources.resources
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.csproj.GenerateResource.Cache
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.exe
+C:\Users\Gnar\Desktop\NewDictionary\WindowImageToText\obj\Debug\WindowImageToText.pdb
